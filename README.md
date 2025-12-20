@@ -1,5 +1,9 @@
 ## Projects Included
 
+# Projects Repository
+
+This repository contains multiple academic and personal projects related to Operating Systems and Python programming.
+
 ### CPU Scheduling Simulator
 
 Folder: CPU Scheduling
@@ -19,10 +23,6 @@ Round Robin (RR)
 How to Run
 python __main__.py
 
-
-# Projects Repository
-
-This repository contains multiple academic and personal projects related to Operating Systems and Python programming.
 
 ### Linux Activity Monitor
 **Folder:** `Linux-Activity-Monitor-main`
