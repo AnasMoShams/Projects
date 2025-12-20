@@ -20,9 +20,10 @@ Priority (Preemptive & Non-Preemptive)
 
 Round Robin (RR)
 
-How to Run
+#### How to Run
+```bash
 python __main__.py
-
+```
 
 ### Linux Activity Monitor
 **Folder:** `Linux-Activity-Monitor-main`
@@ -45,3 +46,4 @@ source .venv/bin/activate
 pip install -r requirements.txt
 python main.py
 Note: This project is designed to run on Linux.
+```
