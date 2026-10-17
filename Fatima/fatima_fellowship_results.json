@@ -1,0 +1,86 @@
+[
+  {
+    "case_id": "case1",
+    "topic": "Pointwise versus uniform convergence on [0,1]",
+    "reference_verdict": "INCORRECT",
+    "model_verdict": "INCORRECT",
+    "verdict_correct": true,
+    "reason_assessment": "PARTIALLY_INCORRECT",
+    "verbal_confidence": "MEDIUM",
+    "raw_output": "Verdict: INCORRECT  \nReason: Pointwise convergence does not imply uniform convergence because, for example, the sequence $ f_n(x) = x^n $ converges pointwise to 0 on [0,1], but does not converge uniformly.  \nConfidence: MEDIUM  \nWhy this confidence: The uniform convergence would require the maximum difference between $ f_n(x) $ and 0 to approach 0 uniformly across all $ x \\in [0,1] $, which is not the case here.",
+    "notes": "The recorded explanation incorrectly stated that x^n converges pointwise to zero on all of [0,1], overlooking x=1. The exact complete raw output is not preserved in this log. The long-form output is preserved separately in fatima_fellowship_recovered_outputs.json.",
+    "raw_output_status": "RECORDED"
+  },
+  {
+    "case_id": "case2",
+    "topic": "Incorrect dependence of N on x",
+    "reference_verdict": "INCORRECT",
+    "model_verdict": "INCORRECT",
+    "verdict_correct": true,
+    "reason_assessment": "CORRECT",
+    "verbal_confidence": "LOW",
+    "raw_output": "Verdict: INCORRECT  \nReason: The proof incorrectly states that a sequence of functions converges uniformly to f on E because for every x in E, there exists N depending on x such that for all n ≥ N, |f_n(x) - f(x)| < ε. The correct definition of uniform convergence requires that for every ε > 0, there exists N such that for all x in E and all n ≥ N, |f_n(x) - f(x)| < ε, regardless of x.  \nConfidence: LOW  \nWhy this confidence: The proof fails to address the universal quantifier over x and n, which is essential for uniform convergence.",
+    "notes": "The recorded assessment says the model correctly identified that N must work independently of x. Exact raw output not preserved.",
+    "raw_output_status": "RECORDED"
+  },
+  {
+    "case_id": "case3",
+    "topic": "Valid uniform convergence proof for f_n(x)=x/n",
+    "reference_verdict": "CORRECT",
+    "model_verdict": "INCORRECT",
+    "verdict_correct": false,
+    "reason_assessment": "INCORRECT",
+    "verbal_confidence": "MEDIUM",
+    "raw_output": "Verdict: INCORRECT  \nReason: The proof is incorrect because it assumes that $ \\frac{1}{N} < \\epsilon $ for some $ N > \\frac{1}{\\epsilon} $, but this is only valid if $ \\epsilon $ is fixed and $ N $ is chosen accordingly. The error lies in the choice of $ N $, as $ N $ should be chosen such that $ \\frac{1}{N} < \\epsilon $, but the proof does not properly establish this for all $ \\epsilon $.  \nConfidence: MEDIUM  \nWhy this confidence: The proof incorrectly assumes that $ \\frac{1}{N} < \\epsilon $ for some $ N $, but the correct approach requires choosing $ N $ such that $ \\frac{1}{N} < \\epsilon $, which is not properly justified in the given proof.",
+    "notes": "The model reportedly rejected the valid choice N > 1/epsilon. Exact raw output not preserved.",
+    "raw_output_status": "RECORDED"
+  },
+  {
+    "case_id": "case4",
+    "topic": "Paraphrase of the valid x/n proof",
+    "reference_verdict": "CORRECT",
+    "model_verdict": "CORRECT",
+    "verdict_correct": true,
+    "reason_assessment": "CORRECT",
+    "verbal_confidence": null,
+    "raw_output": "Verdict: CORRECT\nReason: The proof correctly applies the uniform convergence criterion by showing that for all n ≥ N, the difference |f_n(x) - f(x)| = x/n ≤ 1/n ≤ 1/N < ε, hence proving uniform convergence to zero.",
+    "notes": "The model did not provide the requested confidence label. The prompt was shorter than the Case 3 prompt.",
+    "raw_output_status": "RECORDED"
+  },
+  {
+    "case_id": "case5",
+    "topic": "Uniform convergence on [0,1/2]",
+    "reference_verdict": "CORRECT",
+    "model_verdict": "CORRECT",
+    "verdict_correct": true,
+    "reason_assessment": "CORRECT",
+    "verbal_confidence": null,
+    "raw_output": "Verdict: CORRECT  \nReason: The proof correctly applies the uniform convergence criterion, showing that the sequence $ f_n(x) = x^n $ converges uniformly to 0 on $[0, 1/2]$ by bounding the difference by $ (1/2)^n $, which tends to 0 as $ n \\to \\infty $.",
+    "notes": "Confidence label not provided by the model.",
+    "raw_output_status": "RECORDED"
+  },
+  {
+    "case_id": "case6",
+    "topic": "Pointwise but not uniform convergence on [0,1)",
+    "reference_verdict": "INCORRECT",
+    "model_verdict": "INCORRECT",
+    "verdict_correct": true,
+    "reason_assessment": "PARTIALLY_INCORRECT",
+    "verbal_confidence": null,
+    "raw_output": "Verdict: INCORRECT  \nReason: The student's conclusion is incorrect because uniform convergence requires that the maximum of |f_n(x) - f(x)| tends to zero uniformly over the entire interval. Here, f_n(x) = x^n on [0, 1), and the maximum of |x^n| occurs at x = 1, but 1^n = 1, not 0. Thus, the maximum does not tend to zero.",
+    "notes": "The verdict is correct, but the explanation incorrectly says the maximum occurs at x=1, which is outside the domain. The supremum is 1.",
+    "raw_output_status": "RECORDED"
+  },
+  {
+    "case_id": "case7",
+    "topic": "Pointwise convergence of sin(x/n) on R",
+    "reference_verdict": "INCORRECT",
+    "model_verdict": "INCORRECT",
+    "verdict_correct": true,
+    "reason_assessment": "CORRECT",
+    "verbal_confidence": null,
+    "raw_output": "Verdict: INCORRECT  \nReason: The student's conclusion is incorrect because uniform convergence requires that the maximum of |f_n(x) - f(x)| tends to zero uniformly over all x. Since f_n(x) = sin(x/n), the maximum value of |sin(x/n)| is 1, and it does not tend to zero uniformly.",
+    "notes": "Confidence label not provided by the model.",
+    "raw_output_status": "RECORDED"
+  }
+]
